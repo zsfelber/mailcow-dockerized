@@ -28,6 +28,8 @@ done
 # Check Docker Version (need at least 24.X)
 docker_version=$(docker version --format '{{.Server.Version}}' | cut -d '.' -f 1)
 
+echo docker_version : $docker_version
+
 if [[ $docker_version -lt 24 ]]; then
   echo -e "\e[31mCannot find Docker with a Version higher or equals 24.0.0\e[0m"
   echo -e "\e[33mmailcow needs a newer Docker version to work properly...\e[0m"
